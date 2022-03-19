@@ -556,6 +556,29 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "livenessProbe": {
+                    "description": "Liveness probe configuration.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "initialDelaySeconds": {
+                            "description": "Scheduler Liveness probe initial delay.",
+                            "type": "integer"
+                        },
+                        "timeoutSeconds": {
+                            "description": "Scheduler Liveness probe timeout seconds.",
+                            "type": "integer"
+                        },
+                        "failureThreshold": {
+                            "description": "Scheduler Liveness probe failure threshold.",
+                            "type": "integer"
+                        },
+                        "periodSeconds": {
+                            "description": "Webserver Liveness probe period seconds.",
+                            "type": "integer"
+                        }
+                    }
+                },
                 "replicas": {
                     "description": "Number of airflow celery workers in StatefulSet.",
                     "type": "integer"
